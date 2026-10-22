@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SET 2430: Data Structures Hub — Fall 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .math-text { font-family: 'Cambria Math', 'Times New Roman', Georgia, serif; letter-spacing: 0.02em; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 9999px; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased custom-scrollbar">
+
+  <!-- Header Nav -->
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-8 py-3 flex items-center justify-between text-xs">
+    <div class="flex items-center gap-3">
+      <a href="/index.html" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-400 font-bold border border-slate-700 transition">
+        ← Semester Portal
+      </a>
+      <span class="text-slate-600">/</span>
+      <span class="font-extrabold text-white">SET 2430: Data Structures Hub</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">Python • 3 Credits</span>
+      <span class="hidden sm:inline text-slate-400">Lecture <code>1338056</code> • Lab <code>1338055</code></span>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- Course Hero -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 relative overflow-hidden backdrop-blur-sm shadow-2xl">
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="space-y-3">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">SET 2430</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-400 border border-sky-500/30">Wed Zoom + Thu Voorhees V-610</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Prof. Haiying Xiao</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            SET 2430: Algorithmic Design and Data Structures
+          </h1>
+          <p class="text-sm sm:text-base text-slate-400 max-w-2xl leading-relaxed">
+            Data abstraction, recursion, complexity analysis (Big-O), linked lists, stacks, queues, trees, and sorting algorithms in Python. 10 assignments constitute 40% of the grade.
+          </p>
+        </div>
+
+        <!-- Course Meta Card -->
+        <div class="bg-slate-950/80 border border-slate-800 p-5 rounded-2xl flex flex-col gap-2.5 min-w-[300px] text-xs">
+          <div class="flex justify-between pb-2 border-b border-slate-800">
+            <span class="text-slate-400">Wednesdays (Lecture)</span>
+            <span class="font-bold text-sky-400">9:00–10:40 AM (Zoom)</span>
+          </div>
+          <div class="flex justify-between pb-2 border-b border-slate-800">
+            <span class="text-slate-400">Thursdays (Lab)</span>
+            <span class="font-bold text-amber-400">9:00–10:40 AM (V-610)</span>
+          </div>
+          <div class="flex justify-between pb-2 border-b border-slate-800">
+            <span class="text-slate-400">Office Hours</span>
+            <span class="font-semibold text-emerald-400">Tue 11:45 AM–12:45 PM (V-631)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Grading System</span>
+            <span class="font-semibold text-purple-400">Assign 40% • Final 20% • Mid 15%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="mt-6 pt-5 border-t border-slate-800 flex flex-wrap gap-2 text-xs">
+        <a href="https://us06web.zoom.us/j/83195380015?pwd=UX0zHEjmTMl5oh8qbnFaTJ4NLYRs8r.1" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold transition flex items-center gap-1.5">
+          <span>🎥 Join Class Zoom</span>
+          <span class="text-[10px] font-mono opacity-80">(831 9538 0015 • SET2430)</span>
+        </a>
+        <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/CLASS RECORDINGS.md" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition">
+          📹 OneDrive Class Recordings
+        </a>
+        <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Syllabus & Course Info/SET2430 Course Outline (Prof Xiao, Fall 2026).pdf" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 font-semibold border border-slate-700 transition">
+          📄 Course Outline PDF
+        </a>
+      </div>
+    </div>
+
+    <!-- Attendance Policy Alert Box -->
+    <div class="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-xs text-rose-200 flex items-start gap-3">
+      <span class="text-lg">⚠️</span>
+      <div>
+        <strong class="text-rose-300 font-bold block mb-0.5">Strict Departmental Attendance Policy:</strong>
+        1–19 min late = 1 Late • 3 Lates = 1 Absence • >20 min late = Absence. 
+        <strong class="text-white">Three absences result in a "WF" or "F" grade.</strong> No late assignments accepted (graded as zero).
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- PRIMARY SECTION: SYLLABUS & MILESTONE TIMELINE           -->
+    <!-- ======================================================== -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Left Column: Syllabus Document Viewer (col-span-7) -->
+      <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <span class="p-2.5 rounded-2xl bg-amber-500/20 text-amber-400 text-lg">📄</span>
+              <div>
+                <h2 class="text-base sm:text-lg font-extrabold text-white">Course Syllabus & Outline</h2>
+                <p class="text-xs text-slate-400">Prof. Haiying Xiao • SET 2430 • Fall 2026</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Syllabus & Course Info/SET2430 Course Outline (Prof Xiao, Fall 2026).pdf" target="_blank" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs font-semibold border border-slate-700 transition flex items-center gap-1.5 shadow-sm">
+                <span>↗ Fullscreen</span>
+              </a>
+              <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Syllabus & Course Info/SET2430 Course Outline (Prof Xiao, Fall 2026).pdf" download class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-xs font-semibold border border-amber-500/30 transition flex items-center gap-1">
+                <span>↓ Download</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Embedded PDF Viewer -->
+          <div class="w-full h-[580px] rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-inner">
+            <iframe 
+              src="/docs/SET 2430 - Algorithmic Design and Data Structures/Syllabus & Course Info/SET2430 Course Outline (Prof Xiao, Fall 2026).pdf#toolbar=1&navpanes=0&scrollbar=1" 
+              class="w-full h-full border-0" 
+              title="SET 2430 Syllabus Outline">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+          <span>Official Departmental Document (7 Pages)</span>
+          <span class="font-mono text-amber-400/90">SET2430 Course Outline (Prof Xiao, Fall 2026).pdf</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Major Dates Timeline (col-span-5) -->
+      <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-2xl flex flex-col justify-between space-y-6">
+        <div>
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <span class="p-2.5 rounded-2xl bg-sky-500/20 text-sky-400 text-lg">📅</span>
+              <div>
+                <h2 class="text-base sm:text-lg font-extrabold text-white">Major Milestones & Exam Dates</h2>
+                <p class="text-xs text-slate-400">Semester Deadlines, Midterm, Project & Final</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-slate-800 text-amber-400 border border-slate-700">Fall 2026</span>
+          </div>
+
+          <!-- Timeline Vertical Stack -->
+          <div class="relative pl-6 space-y-5 before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-800">
+            
+            <!-- Item 1: Expected Project -->
+            <div class="relative group">
+              <div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-950 shadow-md"></div>
+              <div class="bg-slate-950/70 border border-slate-800/80 p-3.5 rounded-2xl space-y-1 hover:border-amber-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold font-mono text-amber-400 uppercase tracking-wider">Week 7 • Expected Project</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">10% Weight</span>
+                </div>
+                <h3 class="text-sm font-bold text-white">Main Term Project Submission</h3>
+                <p class="text-xs text-slate-400">Due Wed/Thu, Oct 14–15. Implementation of practical data structures. Strictly no late submissions.</p>
+              </div>
+            </div>
+
+            <!-- Item 2: Expected Midterm -->
+            <div class="relative group">
+              <div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-rose-500 border-2 border-slate-950 shadow-md"></div>
+              <div class="bg-slate-950/70 border border-slate-800/80 p-3.5 rounded-2xl space-y-1 hover:border-rose-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold font-mono text-rose-400 uppercase tracking-wider">Week 8 • Expected Midterm</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">15% Weight</span>
+                </div>
+                <h3 class="text-sm font-bold text-white">Midterm Examination</h3>
+                <p class="text-xs text-slate-400">Wed/Thu, Oct 21–22 in person. Covers Weeks 1–7: Big-O, recurrence relations, arrays, linked lists, stacks, and queues.</p>
+              </div>
+            </div>
+
+            <!-- Item 3: Withdrawal Deadline -->
+            <div class="relative group">
+              <div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-slate-600 border-2 border-slate-950 shadow-md"></div>
+              <div class="bg-slate-950/70 border border-slate-800/80 p-3 rounded-2xl space-y-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold font-mono text-slate-400 uppercase tracking-wider">Friday, Nov 6</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">Registrar</span>
+                </div>
+                <h3 class="text-xs font-bold text-slate-200">Last Day to Withdraw with a "W"</h3>
+                <p class="text-[11px] text-slate-400">Official City Tech term withdrawal cutoff with no GPA impact.</p>
+              </div>
+            </div>
+
+            <!-- Item 4: Expected Final Exam -->
+            <div class="relative group">
+              <div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-purple-500 border-2 border-slate-950 shadow-md"></div>
+              <div class="bg-slate-950/70 border border-slate-800/80 p-3.5 rounded-2xl space-y-1 hover:border-purple-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold font-mono text-purple-400 uppercase tracking-wider">Week 16/17 • Expected Final</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">20% Weight</span>
+                </div>
+                <h3 class="text-sm font-bold text-white">Comprehensive Final Examination</h3>
+                <p class="text-xs text-slate-400">Wed/Thu, Dec 16–17 in person. Cumulative across all 15 course modules (trees, sorting, hashing, and graphs).</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Grade Distribution Breakdown -->
+        <div class="pt-4 border-t border-slate-800 space-y-2">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">Course Grade Breakdown (100% Total)</span>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">10 Assignments</span>
+              <strong class="text-amber-400 font-bold">40%</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Final Exam</span>
+              <strong class="text-purple-400 font-bold">20%</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Midterm Exam</span>
+              <strong class="text-rose-400 font-bold">15%</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Main Project</span>
+              <strong class="text-sky-400 font-bold">10%</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">4 Quizzes</span>
+              <strong class="text-emerald-400 font-bold">10%</strong>
+            </div>
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Attendance</span>
+              <strong class="text-slate-300 font-bold">5%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-4">
+      <button onclick="switchTab('roadmap')" id="tab-btn-roadmap" class="hub-tab px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20">
+        📚 Weekly Modules & Big-O
+      </button>
+      <button onclick="switchTab('docs')" id="tab-btn-docs" class="hub-tab px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
+        📄 Document & Slide Library
+      </button>
+      <button onclick="switchTab('assignments')" id="tab-btn-assignments" class="hub-tab px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
+        💻 10-Assignment Tracker (40%)
+      </button>
+      <button onclick="switchTab('big-o')" id="tab-btn-big-o" class="hub-tab px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-slate-800 text-slate-300 border border-slate-700">
+        ⚡ Big-O Complexity Grapher
+      </button>
+    </div>
+
+    <!-- TAB 1: ROADMAP & MODULES -->
+    <div id="tab-roadmap" class="tab-pane space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Week 01 -->
+        <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">Week 1 • Done</span>
+            <span class="text-slate-400 font-mono">Sep 1–3</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Course Overview & Python Review</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Variables, types, control flow, functions, lists, dictionaries, and environment setup in VS Code.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 01 - Python Basics.pdf" target="_blank" class="text-sky-400 hover:underline">
+              View Slide Deck ↗
+            </a>
+            <span class="text-slate-500">Assignment 1</span>
+          </div>
+        </div>
+
+        <!-- Week 02 -->
+        <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">Week 2 • Done</span>
+            <span class="text-slate-400 font-mono">Sep 8–10</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Object-Oriented Programming (OOP)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Classes, constructors <code class="text-amber-300">__init__</code>, inheritance, encapsulation, polymorphism, and dunder methods.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 02 - sep9 class code.py" target="_blank" class="text-sky-400 hover:underline">
+              View Class Code ↗
+            </a>
+            <span class="text-slate-500">Assignment 2</span>
+          </div>
+        </div>
+
+        <!-- Week 03 -->
+        <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">Week 3 • Done</span>
+            <span class="text-slate-400 font-mono">Sep 15–17</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Recursion & Mathematical Induction</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Base cases, recursive call stacks, call stack memory growth, recurrence relations, and Fibonacci/Factorial trees.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <a href="topics/recursion-and-complexity.html" class="text-amber-400 hover:underline font-bold">
+              Open Topic Page →
+            </a>
+            <span class="text-slate-500">Assignment 3</span>
+          </div>
+        </div>
+
+        <!-- Week 04 (Current) -->
+        <div class="p-6 bg-slate-900 border-2 border-amber-500 rounded-3xl space-y-3 shadow-xl">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-slate-950 font-extrabold animate-pulse">Week 4 • Active</span>
+            <span class="text-slate-400 font-mono">Sep 22–24</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Algorithm Analysis & Big-O Notation</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Asymptotic growth rate: Big-O, Big-Omega, Big-Theta. Counting loop operations, nested loops, and worst-case bounds.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <button onclick="switchTab('big-o')" class="text-amber-400 hover:underline font-bold">
+              Launch Big-O Grapher →
+            </button>
+            <span class="text-amber-300 font-semibold">Assignment 4</span>
+          </div>
+        </div>
+
+        <!-- Week 05 -->
+        <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">Week 5 • Materials Added</span>
+            <span class="text-slate-400 font-mono">Sep 30–Oct 1</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Algorithm Analysis (Part 2) & Space Complexity</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Recurrence expansion ($T(n) = 2T(n/2) + n$), Omega/Theta bounds, multi-parameter $O(nm)$, and auxiliary space.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 05 - Algorithm Analysis (Part 2), Recurrence Relations, and Space Complexity.md" target="_blank" class="text-sky-400 hover:underline">
+              View Week 5 Notes ↗
+            </a>
+            <span class="text-amber-300 font-semibold">Recurrence Tree</span>
+          </div>
+        </div>
+
+        <!-- Week 06 -->
+        <div class="p-6 bg-slate-900 border border-amber-500/40 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">Week 6 • Materials Added</span>
+            <span class="text-slate-400 font-mono">Oct 7–8</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Linear Structures: Arrays & Linked Lists</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Amortized analysis ($O(1)$ append), Singly/Doubly Linked Lists, circular loops, and array resizing mechanics.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 06 - Linear Structures, Amortized Analysis, and Linked Lists.md" target="_blank" class="text-sky-400 hover:underline">
+              View Week 6 Notes ↗
+            </a>
+            <span class="text-amber-300 font-semibold">Oct 7 Practice</span>
+          </div>
+        </div>
+
+        <!-- Week 07 -->
+        <div class="p-6 bg-slate-900 border border-indigo-500/50 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold">Week 7 • In-Person Lab Today</span>
+            <span class="text-slate-400 font-mono">Oct 14–15</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Stacks, Queues & Assignment 5</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Circular & Doubly lists, LIFO Stacks, FIFO Queues, Browser History navigation, and LIFO Stack using two Queues.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
+            <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 07 - Circular and Doubly Linked Lists, Stacks, and Queues.md" target="_blank" class="text-sky-400 hover:underline">
+              View Week 7 Notes ↗
+            </a>
+            <span class="text-emerald-400 font-semibold">HW 5 Ready</span>
+          </div>
+        </div>
+
+        <!-- Week 08 Midterm Exam -->
+        <div class="p-6 bg-gradient-to-br from-rose-950/40 to-slate-900 border border-rose-500/40 rounded-3xl space-y-3">
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 font-bold">Next Week • Midterm Exam</span>
+            <span class="text-rose-400 font-mono">Oct 21–22</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Midterm Exam (15% Weight)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Review of Weeks 1–7: Asymptotic analysis, linear arrays, linked lists, stacks, queues, and recursion.
+          </p>
+          <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs text-rose-300">
+            <span>In-Person Next Week</span>
+            <span>15% Course Grade</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: DOCUMENT & SLIDE LIBRARY -->
+    <div id="tab-docs" class="tab-pane hidden space-y-6">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+        <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">SET 2430 Document & Code Library</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mb-6">Uploaded course slides, Python code scripts, and assignments from the course folder.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Syllabus & Course Info/SET2430 Course Outline (Prof Xiao, Fall 2026).pdf" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">Official Syllabus</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-amber-300">Course Outline & Policies</h3>
+              <p class="text-xs text-slate-400 mt-2">Grading breakdown, week-by-week calendar, attendance and homework policy.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-amber-400">Open PDF ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 01 - Python Basics.pdf" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Lecture Slides</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-sky-300">Week 01: Python Basics</h3>
+              <p class="text-xs text-slate-400 mt-2">Core Python review, data structures, and functions presentation slides.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-sky-400">Open PDF ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 01 - Study Materials.pptx" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">PowerPoint Deck</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-indigo-300">Week 01: Study Materials Deck</h3>
+              <p class="text-xs text-slate-400 mt-2">Supplementary slide deck on Python data models and algorithms.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-indigo-400">Download/Open PPTX ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 02 - sep9 class code.py" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Python Script</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-emerald-300">Sep 9 Class Code (OOP)</h3>
+              <p class="text-xs text-slate-400 mt-2">In-class Python implementation of classes, methods, and instances.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-emerald-400">View Python Code ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Assignments & Labs/assignment2.py" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-rose-400 uppercase tracking-wider mb-1">Homework File</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-rose-300">Assignment 02 Source Code</h3>
+              <p class="text-xs text-slate-400 mt-2">Python starter code and submission file for Assignment 02.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-rose-400">View Python Code ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/CLASS RECORDINGS.md" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-1">Markdown Links</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-purple-300">Class OneDrive Recordings</h3>
+              <p class="text-xs text-slate-400 mt-2">Prof. Xiao's view-only recording links from every online session.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-purple-400">View Links ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 06 - Linear Structures, Amortized Analysis, and Linked Lists.md" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Week 06 Notes</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-sky-300">Arrays, Amortized & Lists</h3>
+              <p class="text-xs text-slate-400 mt-2">Amortized O(1) dynamic array append, Singly/Doubly/Circular Linked Lists, ADT operations.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-sky-400">View Study Guide ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Assignments & Labs/oct7_linked_list_practice.py" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Oct 7 Practice Code</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-emerald-300">Linked List & Benchmark</h3>
+              <p class="text-xs text-slate-400 mt-2">Node class, SinglyLinkedList implementation with head/size, and array append time benchmarks.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-emerald-400">View Python Code ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Assignments & Labs/assignment4.py" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">Assignment 04</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-amber-300">Binary Tree Node & BFS</h3>
+              <p class="text-xs text-slate-400 mt-2">Verified submission file for count_nodes, tree_depth_rec, and tree_depth_bfs.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-amber-400">View Python Code ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 05 - Algorithm Analysis (Part 2), Recurrence Relations, and Space Complexity.md" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-1">Week 05 Notes</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-sky-300">Analysis Pt 2 & Space</h3>
+              <p class="text-xs text-slate-400 mt-2">Expansion method proof for T(n)=2T(n/2)+n, Big-Omega/Theta, multi-parameter, and auxiliary space.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-sky-400">View Study Guide ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Lectures/Week 07 - Circular and Doubly Linked Lists, Stacks, and Queues.md" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-indigo-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">Week 07 Notes</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-indigo-300">Lists, Stacks & Queues</h3>
+              <p class="text-xs text-slate-400 mt-2">Circular & Doubly Linked Lists, LIFO Stack, FIFO Queue, Browser history & 2-queue stack.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-indigo-400">View Study Guide ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Assignments & Labs/week7_linked_lists_code.py" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-indigo-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Week 07 Class Code</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-emerald-300">Circular & Doubly Lists</h3>
+              <p class="text-xs text-slate-400 mt-2">Prof. Xiao's in-class implementation of CircularLinkedList and DoublyLinkedList.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-emerald-400">View Python Code ↗</div>
+          </a>
+
+          <a href="/docs/SET 2430 - Algorithmic Design and Data Structures/Assignments & Labs/assignment5.py" target="_blank" class="p-5 bg-slate-950 border border-slate-800 rounded-2xl hover:border-amber-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">Assignment 05 (Ready)</div>
+              <h3 class="text-sm font-bold text-white group-hover:text-amber-300">Browser & 2-Queue Stack</h3>
+              <p class="text-xs text-slate-400 mt-2">BrowserHistory (visit/back/forward) & MyStack using two queues. Verified and tested.</p>
+            </div>
+            <div class="mt-4 text-xs font-semibold text-amber-400">View Python Code ↗</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 10 ASSIGNMENT TRACKER -->
+    <div id="tab-assignments" class="tab-pane hidden space-y-6">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+        <div class="flex justify-between items-center mb-6">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white">10 Class Assignments Tracker (40% Total)</h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">Each assignment is worth 4% of your final course grade. No late work accepted.</p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-slate-400">Completed Weight</span>
+            <div id="assign-weight" class="text-lg font-bold text-emerald-400">20% / 40%</div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-950 text-slate-400 border-b border-slate-800">
+              <tr>
+                <th class="py-3 px-4">#</th>
+                <th class="py-3 px-4">Topic / Scope</th>
+                <th class="py-3 px-4">Due Date</th>
+                <th class="py-3 px-4">Weight</th>
+                <th class="py-3 px-4">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/80 bg-slate-900/40">
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">HW 1</td>
+                <td class="py-3 px-4 text-white">Python Review & Questionnaire</td>
+                <td class="py-3 px-4 text-slate-400">Sep 3</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Submitted</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">HW 2</td>
+                <td class="py-3 px-4 text-white">Object-Oriented Programming (Classes & Inheritance)</td>
+                <td class="py-3 px-4 text-slate-400">Sep 10</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Submitted</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">HW 3</td>
+                <td class="py-3 px-4 text-white">Recursion & Recurrence Relations</td>
+                <td class="py-3 px-4 text-slate-400">Sep 17</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Submitted</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 bg-emerald-500/10">
+                <td class="py-3 px-4 font-mono font-bold text-emerald-400">HW 4</td>
+                <td class="py-3 px-4 text-white font-bold">Algorithm Analysis (Pt 1) — Asymptotic Bounds</td>
+                <td class="py-3 px-4 text-slate-400">Sep 24</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Verified / Ready</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 bg-emerald-500/10">
+                <td class="py-3 px-4 font-mono font-bold text-emerald-400">HW 5</td>
+                <td class="py-3 px-4 text-white font-bold">Browser History & 2-Queue Stack</td>
+                <td class="py-3 px-4 text-emerald-300 font-bold">Oct 15 (Today)</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">Verified / Ready</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 bg-amber-500/10">
+                <td class="py-3 px-4 font-mono font-bold text-amber-400">HW 6</td>
+                <td class="py-3 px-4 text-white font-bold">Singly & Doubly Linked Lists</td>
+                <td class="py-3 px-4 text-amber-300 font-bold">Oct 8</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 text-xs font-bold">Practice Saved</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-slate-500">HW 7</td>
+                <td class="py-3 px-4 text-slate-300">Stacks, Queues & Deques</td>
+                <td class="py-3 px-4 text-slate-400">Oct 29</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs">Upcoming</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-slate-500">HW 8</td>
+                <td class="py-3 px-4 text-slate-300">Binary Trees & Tree Traversals</td>
+                <td class="py-3 px-4 text-slate-400">Nov 5</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs">Upcoming</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-slate-500">HW 9</td>
+                <td class="py-3 px-4 text-slate-300">Binary Search Trees (BST) & Heaps</td>
+                <td class="py-3 px-4 text-slate-400">Nov 12</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs">Upcoming</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-3 px-4 font-mono font-bold text-slate-500">HW 10</td>
+                <td class="py-3 px-4 text-slate-300">Sorting Algorithms (Quicksort, Mergesort)</td>
+                <td class="py-3 px-4 text-slate-400">Dec 3</td>
+                <td class="py-3 px-4 font-semibold text-slate-300">4%</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 text-xs">Upcoming</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: BIG-O COMPASS -->
+    <div id="tab-big-o" class="tab-pane hidden space-y-6">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-white">Big-O Time Complexity Compass</h2>
+        <p class="text-xs sm:text-sm text-slate-400">Ranked from best to worst asymptotic runtime growth rate.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          <div class="p-4 bg-slate-950 border border-emerald-500/40 rounded-2xl">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-bold">O(1)</span>
+            <div class="font-bold text-white text-sm mt-1">Constant Time</div>
+            <p class="text-slate-400 mt-1">Dictionary lookup, list index access, append to end.</p>
+          </div>
+          <div class="p-4 bg-slate-950 border border-emerald-500/40 rounded-2xl">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-bold">O(log n)</span>
+            <div class="font-bold text-white text-sm mt-1">Logarithmic Time</div>
+            <p class="text-slate-400 mt-1">Binary search, balanced BST search.</p>
+          </div>
+          <div class="p-4 bg-slate-950 border border-sky-500/40 rounded-2xl">
+            <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-400 font-mono font-bold">O(n)</span>
+            <div class="font-bold text-white text-sm mt-1">Linear Time</div>
+            <p class="text-slate-400 mt-1">Single for-loop over list, linear search.</p>
+          </div>
+          <div class="p-4 bg-slate-950 border border-indigo-500/40 rounded-2xl">
+            <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 font-mono font-bold">O(n log n)</span>
+            <div class="font-bold text-white text-sm mt-1">Linearithmic Time</div>
+            <p class="text-slate-400 mt-1">Merge Sort, Timsort (Python sorted()), Heap Sort.</p>
+          </div>
+          <div class="p-4 bg-slate-950 border border-amber-500/40 rounded-2xl">
+            <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono font-bold">O(n²)</span>
+            <div class="font-bold text-white text-sm mt-1">Quadratic Time</div>
+            <p class="text-slate-400 mt-1">Nested loops, Bubble Sort, Selection Sort, Insertion Sort.</p>
+          </div>
+          <div class="p-4 bg-slate-950 border border-rose-500/40 rounded-2xl">
+            <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-mono font-bold">O(2ⁿ)</span>
+            <div class="font-bold text-white text-sm mt-1">Exponential Time</div>
+            <p class="text-slate-400 mt-1">Naive recursive Fibonacci, generating all subsets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function switchTab(t) {
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.hub-tab').forEach(b => {
+        b.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-lg', 'shadow-amber-500/20');
+        b.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      document.getElementById('tab-' + t).classList.remove('hidden');
+      document.getElementById('tab-btn-' + t).classList.add('bg-amber-500', 'text-slate-950', 'shadow-lg', 'shadow-amber-500/20');
+      document.getElementById('tab-btn-' + t).classList.remove('bg-slate-800', 'text-slate-300');
+    }
+  </script>
+</body>
+</html>

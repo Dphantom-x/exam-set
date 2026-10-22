@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SET 2430: Recursion & Mathematical Analysis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-text { font-family: 'Cambria Math', Georgia, serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased p-6 sm:p-10">
+  <div class="max-w-5xl mx-auto space-y-6">
+    <div class="flex items-center gap-3 text-xs">
+      <a href="../index.html" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-400 font-bold border border-slate-800">
+        ← Back to SET 2430 Hub
+      </a>
+      <span class="text-slate-600">/</span>
+      <span class="text-slate-400">Week 03</span>
+      <span class="text-slate-600">/</span>
+      <span class="font-bold text-white">Recursion & Call Stacks</span>
+    </div>
+
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-4">
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">SET 2430 • Deep Dive Topic</span>
+      <h1 class="text-3xl font-extrabold text-white">Recursion, Call Stacks & Recurrence</h1>
+      <p class="text-sm text-slate-400 leading-relaxed max-w-3xl">
+        Every recursive call consumes stack frames in memory. Understanding the base condition, the recursive step, and measuring call tree depth is fundamental to preventing stack overflow and analyzing algorithmic efficiency.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+        <div class="p-5 bg-slate-950 border border-slate-800 rounded-2xl space-y-2">
+          <h3 class="font-bold text-amber-400 text-sm">1. Golden Rules of Recursion</h3>
+          <ul class="text-xs text-slate-300 space-y-1.5">
+            <li>• <strong>Base Case:</strong> Must have at least one terminal condition that halts without making further recursive calls.</li>
+            <li>• <strong>Progress:</strong> Each recursive call must reduce the problem size toward the base case.</li>
+            <li>• <strong>Call Stack Cost:</strong> Each call pushes arguments, return address, and local variables onto the call stack.</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-slate-950 border border-slate-800 rounded-2xl space-y-2">
+          <h3 class="font-bold text-sky-400 text-sm">2. Recurrence Relations</h3>
+          <ul class="text-xs text-slate-300 space-y-1.5">
+            <li>• <strong>Linear Recursion:</strong> T(n) = T(n-1) + O(1) ⟹ O(n)</li>
+            <li>• <strong>Divide & Conquer:</strong> T(n) = 2T(n/2) + O(n) ⟹ O(n log n) (Merge Sort)</li>
+            <li>• <strong>Branching (Naive Fib):</strong> T(n) = T(n-1) + T(n-2) + O(1) ⟹ O(2ⁿ)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

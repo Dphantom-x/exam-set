@@ -1,0 +1,23 @@
+# Ignore everything by default
+*
+
+# Whitelist root files
+!index.html
+!SET_2430_Midterm_Master_Hub.html
+!README.md
+!.gitignore
+
+# Whitelist directories
+!docs/
+!docs/**
+!Fall 2026/
+!Fall 2026/SET 2430 - Algorithmic Design and Data Structures/
+!Fall 2026/SET 2430 - Algorithmic Design and Data Structures/**
+!SET_2430_COMPLETE_STUDY_PACKAGE/
+!SET_2430_COMPLETE_STUDY_PACKAGE/**
+
+# Ignore bytecode and OS metadata
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
